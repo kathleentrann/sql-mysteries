@@ -37,3 +37,14 @@ SELECT transcript, name
 -- I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. The membership number on the bag started with "48Z". Only gold members have those bags. The man got into a car with a plate that included "H42W".	Morty Schapiro
 -- I saw the murder happen, and I recognized the killer from my gym when I was working out last week on January the 9th.	Annabel Miller
 
+-- Find the murderer!
+-- Narrow down search through gym membership
+SELECT person_id, name
+  FROM get_fit_now_check_in check_in
+       JOIN
+       get_fit_now_member member ON check_in.membership_id = member.id
+ WHERE check_in.membership_id LIKE '48Z%' AND
+       member.membership_status = 'gold';
+
+-- 28819	Joe Germuska
+-- 67318	Jeremy Bowers

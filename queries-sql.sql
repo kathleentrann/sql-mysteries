@@ -59,3 +59,12 @@ SELECT name
        p.id = '67318';
 
 -- And murder is Jeremy Bowers!!
+
+-- BONUS try querying the interview transcript of the murderer to find the real villain behind this crime. If you feel especially confident in your SQL skills, try to complete this final step with no more than 2 queries.
+SELECT transcript
+  FROM person p
+       JOIN
+       interview i ON i.person_id = p.id
+ WHERE p.id = '67318';
+
+-- I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.

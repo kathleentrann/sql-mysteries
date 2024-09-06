@@ -68,3 +68,15 @@ SELECT transcript
  WHERE p.id = '67318';
 
 -- I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.
+
+SELECT name
+  FROM person p
+       JOIN
+       drivers_license dl ON p.license_id = dl.id
+       JOIN
+       facebook_event_checkin fb ON fb.person_id = p.id
+ WHERE dl.car_model = 'Model S' AND
+       dl.hair_color = 'red' AND
+       fb.event_name = 'SQL Symphony Concert';
+
+-- Miranda Priestly hired the hit man! 

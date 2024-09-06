@@ -48,3 +48,14 @@ SELECT person_id, name
 
 -- 28819	Joe Germuska
 -- 67318	Jeremy Bowers
+
+-- Find murder via license plate
+SELECT name
+  FROM person p
+       JOIN
+       drivers_license dl ON p.license_id = dl.id
+ WHERE dl.plate_number LIKE '%H42W%' AND
+       p.id = '28819' OR
+       p.id = '67318';
+
+-- And murder is Jeremy Bowers!!
